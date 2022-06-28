@@ -10,9 +10,23 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-const average = () => {
+function sum(tamanho, media) {
+  return tamanho + media;
+}
+const average = (array) => {
   // adicione seu código aqui
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  for (let i = 0; i < array.length; i += 1) {
+    let resultado = array[i];
+    if (typeof resultado !== 'number') {
+      return undefined;
+    }
+  }
+
+  return Math.round(array.reduce(sum, 0) / array.length);
 };
 
 module.exports = average;
